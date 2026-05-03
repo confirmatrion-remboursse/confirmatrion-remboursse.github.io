@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Statut de remboursement</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f2f6f3;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 40px 60px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-top: 6px solid #22c55e;
+      display: none;
+    }
+
+    .icon {
+      width: 70px;
+      height: 70px;
+      background: #22c55e;
+      border-radius: 50%;
+      margin: 0 auto 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    h1 {
+      color: #16a34a;
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+
+    p {
+      color: #444;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    /* Loader */
+    .loader {
+      text-align: center;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #d1d5db;
+      border-top: 6px solid #22c55e;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+    .loading-text {
+      color: #16a34a;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <div class="loading-text">Traitement du remboursement...</div>
+  </div>
+
+  <!-- SUCCESS CARD -->
+  <div class="card" id="card">
+    <div class="icon">✓</div>
+    <h1>Succès</h1>
+    <p>Votre remboursement a été effectué</p>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("card").style.display = "block";
+    }, 2500);
+  </script>
+
+</body>
+</html>
